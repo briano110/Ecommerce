@@ -7,24 +7,32 @@ body,
   padding: 0;
 }
 body {
-  background-color: rgb(0, 141, 0);
+  background-image: url("  https://i.redd.it/nvbulpj75pza1.png");
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h1 {
   font-size: 8rem;
   margin-bottom: 2rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .card {
-  background-color: blue;
+  background: linear-gradient(to bottom, white, #0072ff);
   width: 50rem;
   height: 40rem;
   display: flex;
@@ -47,4 +55,25 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.add-to-cart {
+  height: 4rem;
+  padding: 0 1.6rem;
+  background-color: #aa0d90;
+  color: #edf0ff;
+  border: 1px solid #e05050;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.card-btn:hover {
+  background-color: #ff7396;
+}
+.card p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 300px;
 }
