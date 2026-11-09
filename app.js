@@ -44,3 +44,12 @@ const products = [
 for (let i = 0; i < products.length; i++) {
   inject(products[i]);
 }
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) =>
+  button.addEventListener("click", function (event) {
+    console.log(event.target.closest(".card").getAttribute("data-item"));
+    //go find item in array
+    //items[data-item]
+  }),
+);
