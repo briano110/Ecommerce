@@ -12,7 +12,7 @@ function inject(item) {
         <h2 class="card-header">${item.name}</h2>
         <img src="${item.img}" alt="hello" />
         <p>$${item.price}</p>
-          <button class="add-to-cart" >Add to cart</button>
+          <button class="card-btn" >Add to cart</button>
       </div> `,
   );
 }

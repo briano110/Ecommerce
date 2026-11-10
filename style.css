@@ -32,7 +32,7 @@ body,
 }
 body {
   background-image: url("  https://i.redd.it/nvbulpj75pza1.png");
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: "Courier Prime", monospace;
   font-weight: 400;
   font-style: normal;
   background-size: cover;
@@ -81,7 +81,7 @@ h1 {
   text-align: center;
 }
 
-.add-to-cart {
+.card-btn {
   height: 4rem;
   padding: 0 1.6rem;
   background-color: #aa0d90;
@@ -103,8 +103,8 @@ h1 {
 }
 
 .sidebar {
-  width: 25rem;
-  background: rgba(255, 255, 255, 0.85);
+  width: 45rem;
+  background: rgba(255, 255, 255);
   padding: 2rem;
   border-radius: 1rem;
   display: flex;
@@ -121,15 +121,16 @@ h1 {
 }
 
 .filter-btn {
-  padding: 1.2rem;
-  background-color: #ffffff;
-  border: 2px solid rgb(0, 141, 0);
-  color: rgb(0, 141, 0);
-  border-radius: 0.8rem;
+
+    height: 4rem;
+  padding: 0 1.6rem;
+  background-color: #aa0d90;
+  color: #edf0ff;
+  border: 1px solid #e05050;
+  border-radius: 1rem;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600px;
   cursor: pointer;
-  text-align: left;
 }
 .filter-btn:hover {
   background-color: rgb(0, 141, 0);

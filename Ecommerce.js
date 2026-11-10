@@ -1,14 +1,14 @@
 //Create a list of at least 20 items to sell
 spinners = [
-  { id: 1, name: "Standard", cost: 3.99, category: "Plastic", stock: 10 },
-  { id: 2, name: "Dual-Bar Spinner", cost: 9.99, category: "Metal", stock: 10 },
-  { id: 3, name: "Light-Up Spinner ", cost: 5.99, category: "Glow", stock: 10 },
+  { id: 1, name: "Standard", cost: 3.99, category: "Plastic", stock: 10, img:"IMAGES/Standard.jpg"},
+  { id: 2, name: "Dual-Bar Spinner", cost: 9.99, category: "Metal", stock: 10, img:"IMAGES/Dual-Bar Spinner.jpg" },
+  { id: 3, name: "Light-Up Spinner", cost: 5.99, category: "Glow", stock: 10, img:"IMAGES/Light-Up Spinner.jpg" },
   {
     id: 4,
-    name: "Glow-in-the-Dark Spinner ",
+    name: "Glow-in-the-Dark Spinner",
     cost: 6.99,
     category: "Glow",
-    stock: 10,
+    stock: 10, img:"IMAGES/Glow-in-the-Dark Spinner.jpg"
   },
   {
     id: 5,
@@ -16,6 +16,7 @@ spinners = [
     cost: 11.99,
     category: "Metal",
     stock: 10,
+  img:"IMAGES/Aluminum Tri-Spinner.jpg"
   },
   {
     id: 6,
@@ -105,6 +106,37 @@ spinners = [
     stock: 10,
   },
 ];
+  const container = document.querySelector(".container");
+const cart = {};
+
+function inject(item) {
+  container.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card">
+        <h2 class="card-header">${item.name}</h2>
+        <img src="${item.img}" alt="hello" />
+        <p>$${item.cost}</p>
+          <button class="card-btn" >Add to cart</button>
+      </div> `,
+  );
+}
+spinners.forEach(spinner => inject(spinner));
+
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) =>
+  button.addEventListener("click", function (event) {
+    console.log(event.target.closest(".card").getAttribute("data-item"));
+    //go find item in array
+    //items[data-item]
+  }),
+);
+
+
+
+
+
+/*
 //Filter what products are shown with button clicks (clicks added later!)
 function Sortbycategory(category) {
   const Plastic = spinners.filter((item) => item.category === "Plastic");
@@ -148,3 +180,4 @@ const Total = Object.values(cart).reduce(
   0,
 );
 console.log(Total);
+*/
