@@ -1,112 +1,166 @@
 //Create a list of at least 20 items to sell
 spinners = [
-  { id: 1, name: "Standard", cost: 3.99, category: "Plastic", stock: 10, img:"IMAGES/Standard.jpg"},
-  { id: 2, name: "Dual-Bar Spinner", cost: 9.99, category: "Metal", stock: 10, img:"IMAGES/Dual-Bar Spinner.jpg" },
-  { id: 3, name: "Light-Up Spinner", cost: 5.99, category: "Glow", stock: 10, img:"IMAGES/Light-Up Spinner.jpg" },
   {
-    id: 4,
-    name: "Glow-in-the-Dark Spinner",
-    cost: 6.99,
-    category: "Glow",
-    stock: 10, img:"IMAGES/Glow-in-the-Dark Spinner.jpg"
-  },
-  {
-    id: 5,
-    name: "Aluminum Tri-Spinner ",
-    cost: 11.99,
-    category: "Metal",
-    stock: 10,
-  img:"IMAGES/Aluminum Tri-Spinner.jpg"
-  },
-  {
-    id: 6,
-    name: "Brass Metal Spinner ",
-    cost: 19.99,
-    category: "Metal",
-    stock: 10,
-  },
-  {
-    id: 7,
-    name: "Titanium EDC Spinner ",
-    cost: 29.99,
-    category: "Metal",
-    stock: 10,
-  },
-  {
-    id: 8,
-    name: "Zirconium Spinner ",
-    cost: 39.99,
-    category: "Metal",
-    stock: 10,
-  },
-  {
-    id: 9,
-    name: "Transformable Robot Spinner ",
-    cost: 8.99,
-    category: "Novelty",
-    stock: 10,
-  },
-  {
-    id: 10,
-    name: "Planetary Gear Spinner",
-    cost: 7.99,
-    category: "Novelty",
-    stock: 10,
-  },
-  {
-    id: 11,
-    name: "Custom-Button  Spinner ",
-    cost: 4.99,
-    category: "Plastic",
-    stock: 10,
-  },
-  { id: 12, name: "Chain Spinner", cost: 9.99, category: "Novelty", stock: 10 },
-  { id: 13, name: "Captain America Shield Spinner ", cost: 6.99, stock: 10 },
-  {
-    id: 14,
-    name: "Holographic  Spinner",
-    cost: 12.99,
-    category: "Glow",
-    stock: 10,
-  },
-  {
-    id: 15,
-    name: "Pop-it Spinner",
+    id: 1,
+    name: "standard",
     cost: 3.99,
     category: "Plastic",
     stock: 10,
+    img: "IMAGES/Standard.jpg",
   },
-  { id: 16, name: "Micro Spinner", cost: 4.99, category: "Plastic", stock: 10 },
+  {
+    id: 2,
+    name: "dual-bar spinner",
+    cost: 9.99,
+    category: "Metal",
+    stock: 10,
+    img: "IMAGES/Dual-Bar Spinner.jpg",
+  },
+  {
+    id: 3,
+    name: "light-up spinner",
+    cost: 5.99,
+    category: "Glow",
+    stock: 10,
+    img: "IMAGES/Light-Up Spinner.jpg",
+  },
+  {
+    id: 4,
+    name: "glow-in-the-dark spinner",
+    cost: 6.99,
+    category: "Glow",
+    stock: 10,
+    img: "IMAGES/Glow-in-the-Dark Spinner.jpg",
+  },
+  {
+    id: 5,
+    name: "aluminum tri-spinner",
+    cost: 11.99,
+    category: "Metal",
+    stock: 10,
+    img: "IMAGES/Aluminum Tri-Spinner.jpg",
+  },
+  {
+    id: 6,
+    name: "brass metal spinner",
+    cost: 19.99,
+    category: "Metal",
+    stock: 10,
+    img: "IMAGES/Brass Metal Spinner.webp",
+  },
+  {
+    id: 7,
+    name: "titanium spinner",
+    cost: 29.99,
+    category: "Metal",
+    stock: 10,
+    img: "IMAGES/Titanium EDC Spinner.jpg",
+  },
+  {
+    id: 8,
+    name: "zirconium spinner",
+    cost: 39.99,
+    category: "Metal",
+    stock: 10,
+    img: "IMAGES/Zirconium Spinner.jpg",
+  },
+  {
+    id: 9,
+    name: "transformable robot spinner",
+    cost: 8.99,
+    category: "Novelty",
+    stock: 10,
+    img: "IMAGES/Transformable Robot Spinner.webp",
+  },
+  {
+    id: 10,
+    name: "gear spinner",
+    cost: 7.99,
+    category: "Novelty",
+    stock: 10,
+    img: "IMAGES/Gear Spinner.jpg",
+  },
+  {
+    id: 11,
+    name: "custom-button spinner",
+    cost: 4.99,
+    category: "Plastic",
+    stock: 10,
+    img: "IMAGES/Custom-Button  Spinner.avif",
+  },
+  {
+    id: 12,
+    name: "chain spinner",
+    cost: 9.99,
+    category: "Novelty",
+    stock: 10,
+    img: "IMAGES/Chain fidget Spinner.jpg",
+  },
+  {
+    id: 13,
+    name: "captain america shield spinner",
+    cost: 6.99,
+    stock: 10,
+    img: "IMAGES/Captain America Shield Spinner.jpg",
+  },
+  {
+    id: 14,
+    name: "holographic spinner",
+    cost: 12.99,
+    category: "Glow",
+    stock: 10,
+    img: "IMAGES/Holographic  Spinner.jpg",
+  },
+  {
+    id: 15,
+    name: "pop-it spinner",
+    cost: 3.99,
+    category: "Plastic",
+    stock: 10,
+    img: "IMAGES/Pop-it Spinner.jpg",
+  },
+  {
+    id: 16,
+    name: "micro spinner",
+    cost: 4.99,
+    category: "Plastic",
+    stock: 10,
+    img: "IMAGES/Micro Spinner.jpg",
+  },
   {
     id: 17,
-    name: "Table Spinner ",
+    name: "ferris-wheel spinner",
     cost: 11.99,
     category: "Novelty",
     stock: 10,
+    img: "IMAGES/Ferris-Wheel Spinner.jpg",
   },
   {
     id: 18,
-    name: "Carnival Style Spinner ",
+    name: "carnival style spinner",
     cost: 7.99,
     category: "Plastic",
     stock: 10,
+    img: "IMAGES/Carnival Style Spinner.jpg",
   },
   {
     id: 19,
-    name: "Magnetic Haptic Spinner",
+    name: "magnetic haptic spinner",
     cost: 15.99,
     category: "Metal",
     stock: 10,
+    img: "IMAGES/Magnetic Haptic Spinner.webp",
   },
   {
     id: 20,
-    name: "Suction Cup Baby Spinner ",
+    name: "suction cup baby spinner",
     cost: 2.99,
     category: "Plastic",
     stock: 10,
+    img: "IMAGES/Suction Cup Baby Spinner.avif",
   },
 ];
-  const container = document.querySelector(".container");
+const container = document.querySelector(".container");
 const cart = {};
 
 function inject(item) {
@@ -120,8 +174,7 @@ function inject(item) {
       </div> `,
   );
 }
-spinners.forEach(spinner => inject(spinner));
-
+spinners.forEach((spinner) => inject(spinner));
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) =>
@@ -131,10 +184,6 @@ buttons.forEach((button) =>
     //items[data-item]
   }),
 );
-
-
-
-
 
 /*
 //Filter what products are shown with button clicks (clicks added later!)

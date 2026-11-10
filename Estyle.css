@@ -31,7 +31,6 @@ body,
   padding: 0;
 }
 body {
-  background-image: url("  https://i.redd.it/nvbulpj75pza1.png");
   font-family: "Courier Prime", monospace;
   font-weight: 400;
   font-style: normal;
@@ -41,9 +40,8 @@ body {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 5rem;
   margin-bottom: 2rem;
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +54,7 @@ h1 {
   flex-wrap: wrap;
 }
 .card {
-  background: linear-gradient(to bottom, white, #0072ff);
+  background: linear-gradient(to bottom, white, #ed1c24);
   width: 35rem;
   height: 35rem;
   display: flex;
@@ -84,9 +82,9 @@ h1 {
 .card-btn {
   height: 4rem;
   padding: 0 1.6rem;
-  background-color: #aa0d90;
+  background-color: #e05050;
   color: #edf0ff;
-  border: 1px solid #e05050;
+  border: 1px solid;
   border-radius: 1rem;
   font-size: 1.4rem;
   font-weight: 600px;
@@ -112,21 +110,20 @@ h1 {
   flex-direction: column;
   gap: 1.5rem;
   height: fit-content;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: 2.5rem 2.5rem;
 }
 
 .sidebar h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin-bottom: 0.5rem;
 }
 
 .filter-btn {
-
-    height: 4rem;
+  font-family: "Courier Prime", monospace;
+  height: 4rem;
   padding: 0 1.6rem;
-  background-color: #aa0d90;
-  color: #edf0ff;
+  background-color: white;
+  color: black;
   border: 1px solid #e05050;
   border-radius: 1rem;
   font-size: 1.4rem;
@@ -134,11 +131,11 @@ h1 {
   cursor: pointer;
 }
 .filter-btn:hover {
-  background-color: rgb(0, 141, 0);
+  background-color: #ed1c24;
 }
 .filter-btn.active {
-  background-color: rgb(0, 141, 0);
-  color: #edf0ff;
+  background-color: #ed1c24;
+  color: white;
 }
 .main-layout {
   display: flex;
