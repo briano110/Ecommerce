@@ -1,7 +1,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
   rel="stylesheet"
 />
 <html lang="en">
@@ -12,10 +12,15 @@
     <link rel="stylesheet" href="Estyle.css" />
   </head>
   <body>
-    <h1 id="header">brian's shop</h1>
-      <div class="clock-container">
-  <div id="clock">00:00:00</div>
-</div>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>brian's shop</h2>
+      </div>
+    </section>
+
+    <div class="clock-container">
+      <div id="clock">00:00:00</div>
+    </div>
     <div class="main-layout">
       <aside class="sidebar">
         <h3>filter products</h3>
@@ -27,9 +32,13 @@
         <button class="filter-btn" data-filter="Glow">glow</button>
         <button class="filter-btn" data-filter="Novelty">novelty</button>
         <audio controls>
-  <source src="Christmas.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+          <source src="Christmas.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="cart">
+          <h1>Cart</h1>
+          <p></p>
+        </div>
       </aside>
       <div class="container"></div>
     </div>

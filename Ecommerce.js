@@ -100,6 +100,7 @@ spinners = [
     id: 13,
     name: "captain america shield spinner",
     cost: 6.99,
+    category: "Novelty",
     stock: 10,
     img: "IMAGES/Captain America Shield Spinner.jpg",
   },
@@ -170,24 +171,27 @@ function inject(item) {
         <h2 class="card-header">${item.name}</h2>
         <img src="${item.img}" alt="hello" />
         <p>$${item.cost}</p>
-          <button class="card-btn" >add to cart</button>
+          <button class="card-btn" data-item="${item.id}" >add to cart</button>
       </div> `,
   );
 }
 spinners.forEach((spinner) => inject(spinner));
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".card-btn");
 buttons.forEach((button) =>
   button.addEventListener("click", function (event) {
-    console.log(event.target.closest(".card").getAttribute("data-item"));
-    //go find item in array
-    //items[data-item]
+    const id = event.target.getAttribute("data-item");
+    const cartParagraph = document.querySelector(".cart p");
+
+    if (cartParagraph) {
+      cartParagraph.innerText = id;
+    }
   }),
 );
 
 function updateClock() {
   const now = new Date();
-  
+
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
