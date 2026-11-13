@@ -162,7 +162,7 @@ spinners = [
   },
 ];
 const container = document.querySelector(".container");
-const cart = {};
+const cart = [];
 
 function inject(item) {
   container.insertAdjacentHTML(
@@ -180,12 +180,11 @@ spinners.forEach((spinner) => inject(spinner));
 const buttons = document.querySelectorAll(".card-btn");
 buttons.forEach((button) =>
   button.addEventListener("click", function (event) {
-    const id = event.target.getAttribute("data-item");
-    const cartParagraph = document.querySelector(".cart p");
+    const ID = event.target.getAttribute("data-item");
 
-    if (cartParagraph) {
-      cartParagraph.innerText = id;
-    }
+    cart.push(spinners[ID - 1]);
+    console.log(cart);
+    cartParagraph.innerText = cart;
   }),
 );
 
@@ -203,10 +202,9 @@ function updateClock() {
   const timeString = `${hours}:${minutes}:${seconds} utc-5`;
   document.getElementById("clock").innerText = timeString;
 }
-
 updateClock();
 setInterval(updateClock, 1000);
-/*
+
 //Filter what products are shown with button clicks (clicks added later!)
 function Sortbycategory(category) {
   const Plastic = spinners.filter((item) => item.category === "Plastic");
@@ -220,7 +218,7 @@ function Sortbycategory(category) {
   else return "Product not found";
 }
 //Allow users to add to a cart
-const cart = { Standard: { name: "Standard", cost: 3.99, qty: 1 } };
+
 function addtocart(item) {
   if (cart[item.name]) {
     cart[item.name].qty++;
@@ -228,10 +226,10 @@ function addtocart(item) {
     cart[item.name] = item;
   }
 }
-addtocart({ name: "Standard", cost: 3.99, qty: 1 });
-addtocart({ name: "Standard", cost: 3.99, qty: 1 });
-addtocart({ name: "Magnetic Haptic Spinner", cost: 15.99, qty: 1 });
-console.log(cart);
+// addtocart({ name: "Standard", cost: 3.99, qty: 1 });
+//addtocart({ name: "Standard", cost: 3.99, qty: 1 });
+//addtocart({ name: "Magnetic Haptic Spinner", cost: 15.99, qty: 1 });
+//console.log(cart);
 //Allow users to remove items from cart
 function removecart(item) {
   if (cart[item.name]) {
@@ -242,12 +240,11 @@ function removecart(item) {
   }
 }
 removecart({ name: "Standard", cost: 3.99, qty: 1 });
-console.log(cart);
+// console.log(cart);
 
 // Total
 const Total = Object.values(cart).reduce(
   (sum, item) => sum + item.pirce * item.qty,
   0,
 );
-console.log(Total);
-*/
+// console.log(Total);
