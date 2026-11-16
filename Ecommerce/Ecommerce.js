@@ -162,6 +162,8 @@ spinners = [
   },
 ];
 const container = document.querySelector(".container");
+const cartContainer = document.querySelector(".card-items");
+const cartTotal = document.querySelector(".cart-total");
 const cart = [];
 
 function inject(item) {
@@ -177,14 +179,28 @@ function inject(item) {
 }
 spinners.forEach((spinner) => inject(spinner));
 
+function renderCart() {
+  cartContainer.innerHTML = "";
+
+  cart.forEach((item) => {
+    cartContainer.insertAdjacentHTML(
+      "beforeend",
+      `<div class="cart-item">
+          <img src="${item.img}" alt="${item.name}" />
+   
+            <h2>${item.name}</h2>
+            <p>$${item.cost}</p>
+
+        </div>`,
+    );
+  });
+}
 const buttons = document.querySelectorAll(".card-btn");
 buttons.forEach((button) =>
   button.addEventListener("click", function (event) {
     const ID = event.target.getAttribute("data-item");
-
     cart.push(spinners[ID - 1]);
-    console.log(cart);
-    cartParagraph.innerText = cart;
+    renderCart(); // Render the cart every time a button is clicked
   }),
 );
 

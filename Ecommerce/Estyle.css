@@ -109,7 +109,7 @@ h1 {
 }
 
 .sidebar {
-  width: 30rem;
+  width: 40rem;
   flex-shrink: 0;
   background: rgba(255, 255, 255);
   padding: 2rem;
@@ -130,7 +130,7 @@ h1 {
   font-family: "Courier Prime", monospace;
   font-weight: 400;
   height: 4rem;
-  width: 90%;
+  width: 60%;
   padding: 0 1.6rem;
   background-color: white;
   color: black;
@@ -139,6 +139,9 @@ h1 {
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.2s;
+}
+.sidebar audio {
+  width: 60%;
 }
 .filter-btn:hover {
   background-color: #ed1c24;
@@ -164,14 +167,14 @@ h1 {
 }
 .cart {
   background: #ed1c24;
-  height: 15rem;
+  height: 40rem;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 .cart h1 {
   margin-top: 0.5rem;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 400;
 }
@@ -206,4 +209,23 @@ h1 {
   font-size: 2.4rem;
   margin-bottom: 3rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+}
+.cart img {
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+}
+.cart-total {
+  font-size: 1.5rem;
+}
+.cart-items h2 {
+  font-size: 3rem;
 }
