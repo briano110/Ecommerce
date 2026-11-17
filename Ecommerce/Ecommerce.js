@@ -1,4 +1,3 @@
-
 spinners = [
   {
     id: 1,
@@ -162,7 +161,7 @@ spinners = [
   },
 ];
 const container = document.querySelector(".container");
-const cartContainer = document.querySelector(".card-items");
+const cartContainer = document.querySelector(".card-Container");
 const cartTotal = document.querySelector(".cart-total");
 const cart = [];
 
@@ -181,26 +180,31 @@ spinners.forEach((spinner) => RenderProducts(spinner));
 
 function renderCart() {
   cartContainer.innerHTML = "";
-
+  let total = 0;
   cart.forEach((item) => {
-    cart-Container.insertAdjacentHTML(
+    total = total + item.cost;
+    cartContainer.insertAdjacentHTML(
       "beforeend",
       `<div class="cart-item">
           <img src="${item.img}" alt="${item.name}" />
             <h2>${item.name}</h2>
-            <p>$${item.cost}</p>
+            <p> $${item.cost}</p>
 <button class="remove-btn">x</button>
         </div>`,
     );
   });
+  cartTotal.textContent = `${total.toFixed(2)}`;
+  document.querySelector(".cart-title").textContent = `cart (${cart.length})`;
 }
 const buttons = document.querySelectorAll(".card-btn");
 buttons.forEach((button) =>
   button.addEventListener("click", function (event) {
-    const ID = event.target.getAttribute("data-item");
-const selectedSpinner = spinners.find((spinner) => spinner.id === ID);
-cart.push(selectedSpinner);
-    renderCart(); 
+    const ID = Number(event.target.getAttribute("data-item"));
+    const selectedSpinner = spinners.find((spinner) => spinner.id === ID);
+    if (selectedSpinner) {
+      cart.push(selectedSpinner);
+      renderCart();
+    }
   }),
 );
 
