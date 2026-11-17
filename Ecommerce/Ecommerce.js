@@ -1,4 +1,4 @@
-//Create a list of at least 20 items to sell
+
 spinners = [
   {
     id: 1,
@@ -166,31 +166,30 @@ const cartContainer = document.querySelector(".card-items");
 const cartTotal = document.querySelector(".cart-total");
 const cart = [];
 
-function inject(item) {
+function RenderProducts(item) {
   container.insertAdjacentHTML(
     "beforeend",
     `<div class="card">
         <h2 class="card-header">${item.name}</h2>
-        <img src="${item.img}" alt="hello" />
+        <img src="${item.img}" alt="${item.name}o" />
         <p>$${item.cost}</p>
           <button class="card-btn" data-item="${item.id}" >add to cart</button>
       </div> `,
   );
 }
-spinners.forEach((spinner) => inject(spinner));
+spinners.forEach((spinner) => RenderProducts(spinner));
 
 function renderCart() {
   cartContainer.innerHTML = "";
 
   cart.forEach((item) => {
-    cartContainer.insertAdjacentHTML(
+    cart-Container.insertAdjacentHTML(
       "beforeend",
       `<div class="cart-item">
           <img src="${item.img}" alt="${item.name}" />
-   
             <h2>${item.name}</h2>
             <p>$${item.cost}</p>
-
+<button class="remove-btn">x</button>
         </div>`,
     );
   });
@@ -199,8 +198,9 @@ const buttons = document.querySelectorAll(".card-btn");
 buttons.forEach((button) =>
   button.addEventListener("click", function (event) {
     const ID = event.target.getAttribute("data-item");
-    cart.push(spinners[ID - 1]);
-    renderCart(); // Render the cart every time a button is clicked
+const selectedSpinner = spinners.find((spinner) => spinner.id === ID);
+cart.push(selectedSpinner);
+    renderCart(); 
   }),
 );
 
