@@ -189,12 +189,24 @@ function renderCart() {
           <img src="${item.img}" alt="${item.name}" />
             <h2>${item.name}</h2>
             <p> $${item.cost}</p>
-<button class="remove-btn">x</button>
+<button class="remove-btn" data-item="${item.id}">x</button>
         </div>`,
     );
   });
   cartTotal.textContent = `${total.toFixed(2)}`;
   document.querySelector(".cart-title").textContent = `cart (${cart.length})`;
+
+  const removeButtons = document.querySelectorAll(".remove-btn");
+  removeButtons.forEach((button) =>
+    button.addEventListener("click", function (event) {
+      const ID = Number(event.target.getAttribute("data-item"));
+      const IndextoRemove = cart.findIndex((spinner) => spinner.id === ID);
+      if (IndextoRemove !== -1) {
+        cart.splice(IndextoRemove, 1);
+        renderCart();
+      }
+    }),
+  );
 }
 const buttons = document.querySelectorAll(".card-btn");
 buttons.forEach((button) =>
@@ -207,6 +219,39 @@ buttons.forEach((button) =>
     }
   }),
 );
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+filterButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    event.target.classList.add("active");
+    const category = event.target.getAttribute("data-filter");
+    container.innerHTML = "";
+    if (category === "all") {
+      spinners.forEach((spinner) => RenderProducts(spinner));
+    } else {
+      const filteredSpinners = spinners.filter(
+        (spinner) => spinner.category === category,
+      );
+      filteredSpinners.forEach((spinner) => RenderProducts(spinner));
+    }
+    AddCart();
+  });
+});
+
+function AddCart() {
+  const buttons = document.querySelectorAll(".card-btn");
+  buttons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      const ID = Number(event.target.getAttribute("data-item"));
+      const selectedSpinner = spinners.find((spinner) => spinner.id === ID);
+      if (selectedSpinner) {
+        cart.push(selectedSpinner);
+        renderCart();
+      }
+    });
+  });
+}
 
 function updateClock() {
   const now = new Date();
