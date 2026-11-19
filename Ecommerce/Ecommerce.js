@@ -253,6 +253,13 @@ function AddCart() {
   });
 }
 
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  let x = document.querySelector("#coupon");
+  console.log(x);
+  x.value = "";
+});
+
 function updateClock() {
   const now = new Date();
 
