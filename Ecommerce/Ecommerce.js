@@ -193,7 +193,7 @@ function renderCart() {
         </div>`,
     );
   });
-  cartTotal.textContent = `${total.toFixed(2)}`;
+  cartTotal.textContent = `$${total.toFixed(2)}`;
   document.querySelector(".cart-title").textContent = `cart (${cart.length})`;
 
   const removeButtons = document.querySelectorAll(".remove-btn");
