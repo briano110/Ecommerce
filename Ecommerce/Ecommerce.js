@@ -178,6 +178,14 @@ function RenderProducts(item) {
 }
 spinners.forEach((spinner) => RenderProducts(spinner));
 
+let discount = 0;
+
+const coupons = {
+  SPIN10: 0.1,
+  BRIAN25: 0.25,
+  NICO99: 0.99,
+};
+
 function renderCart() {
   cartContainer.innerHTML = "";
   let total = 0;
@@ -193,7 +201,14 @@ function renderCart() {
         </div>`,
     );
   });
-  cartTotal.textContent = `$${total.toFixed(2)}`;
+  const finalTotal = total * (1 - discount);
+
+  if (discount > 0) {
+    cartTotal.textContent = `$${finalTotal.toFixed(2)} (${Math.round(discount * 100)}% off)`;
+  } else {
+    cartTotal.textContent = `$${finalTotal.toFixed(2)}`;
+  }
+
   document.querySelector(".cart-title").textContent = `cart (${cart.length})`;
 
   const removeButtons = document.querySelectorAll(".remove-btn");
@@ -253,12 +268,26 @@ function AddCart() {
   });
 }
 
-document.querySelector("form").addEventListener("submit", function (event) {
-  event.preventDefault();
-  let x = document.querySelector("#coupon");
-  console.log(x);
-  x.value = "";
-});
+document
+  .querySelector("#coupon-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const input = document.querySelector("#coupon");
+    const code = input.value.trim();
+
+    if (code === "") {
+      discount = 0;
+      renderCart();
+    } else if (Object.prototype.hasOwnProperty.call(coupons, code)) {
+      discount = coupons[code];
+      renderCart();
+      alert(`Coupon ${code} applied (${Math.round(discount * 100)}% off)!`);
+    } else {
+      alert("Invalid coupon code.");
+    }
+
+    input.value = "";
+  });
 
 function updateClock() {
   const now = new Date();
