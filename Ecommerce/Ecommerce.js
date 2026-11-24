@@ -184,6 +184,7 @@ const coupons = {
   SPIN10: 0.1,
   BRIAN25: 0.25,
   NICO99: 0.99,
+  NILSI: -1,
 };
 
 function renderCart() {
