@@ -281,9 +281,7 @@ document
     } else if (Object.prototype.hasOwnProperty.call(coupons, code)) {
       discount = coupons[code];
       renderCart();
-      alert(`Coupon ${code} applied (${Math.round(discount * 100)}% off)!`);
     } else {
-      alert("Invalid coupon code.");
     }
 
     input.value = "";
@@ -305,7 +303,7 @@ function updateClock() {
 }
 updateClock();
 setInterval(updateClock, 1000);
-
+/*
 //Filter what products are shown with button clicks (clicks added later!)
 function Sortbycategory(category) {
   const Plastic = spinners.filter((item) => item.category === "Plastic");
@@ -340,7 +338,7 @@ function removecart(item) {
     delete cart[item.name];
   }
 }
-removecart({ name: "Standard", cost: 3.99, qty: 1 });
+//removecart({ name: "Standard", cost: 3.99, qty: 1 });
 // console.log(cart);
 
 // Total
@@ -349,3 +347,4 @@ const Total = Object.values(cart).reduce(
   0,
 );
 // console.log(Total);
+*/
